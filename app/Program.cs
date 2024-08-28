@@ -1,4 +1,6 @@
-﻿public class Fibonacci
+﻿using System;
+
+public class Fibonacci
 {
     public static void Main()
     {
@@ -8,6 +10,12 @@
         for (int i = 0; i < n; i++)
         {
             Console.Write(FibonacciLoop(i) + " ");
+        }
+
+        Console.WriteLine("\nFibonacci Sequence using recursion:");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(FibonacciRecursion(i) + " ");
         }
     }
 
@@ -30,5 +38,14 @@
         }
 
         return result;
+    }
+
+    public static int FibonacciRecursion(int n)
+    {
+        if (n <= 1)
+        {
+            return n;
+        }
+        return FibonacciRecursion(n - 1) + FibonacciRecursion(n - 2);
     }
 }
